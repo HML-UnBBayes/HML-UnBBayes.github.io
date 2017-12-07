@@ -45,7 +45,8 @@
     <!-- Page Content -->
     <div class="container">
       <br/>
-      <h2>HML-UnBBayes Plugin</h2>
+      <h1>HML-UnBBayes Plugin</h1>
+      <br/>
       <p style="text-align: justify;">The HML-UnBBayes Plugin is an adapter between UnBBayes and the HML core. Basically it includes the standalone tool HML <a href="http://ieeexplore.ieee.org/document/7528144/">(Park et al., 2016)</a> inside the already prestigious UnBBayes <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.232.681">(Matsumoto et al., 2011)</a> framework. The plugin works as a tool for UnBBayes, opening the MEBN's GUI in the end of the HML process to allow the user to work with the MEBN obtained from a relational database using all of UnBBayes' MEBN capabilities.</p>
       
       <p>This page contains:</p>
@@ -64,44 +65,42 @@
       <h2>User Guide</h2>
       
       <p>To use the HML-UnBBayes plugin, the user starts by opening UnBBayes. After that, we proceed by clicking on the HMLP tool button, highlighted in red in the image below. </p>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_01.png" alt="">
-      <br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_01.png" alt=""><br/><br/>
 
       <p>After clicking on the HMLP tool button, a wizard pops up, asking for database server credentials. The plugin expects a MySQL database server on localhost. Therefore, the user has to enter username and password for the MySQL server on the correspondent area on the wizard window, highlighted in red in the following image.</p>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_02.png" alt="">
-      <br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_02.png" alt=""><br/><br/>
       
       <p>After successfully connecting to the MySQL server, the user has to select which database the tool should work on, by clicking in one of the database names listed under “Database” folder. After that, the user clicks on the “Select” button, highlighted in red on the image below.</p>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_03.png" alt=""><br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_03.png" alt=""><br/><br/>
       
       <p>After selecting the database, the tool has a step for editing the World Model. Nevertheless, this feature is not yet implemented. So to proceed the user should click on the “Next[Add Parents]” button, highlighted in red on the following image.</p>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_04.png" alt=""><br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_04.png" alt=""><br/><br/>
       
       <p>On the “Select Parents” step, to add relationships the user should select a child from the left list and parent(s) from the right list. On the following image we select one child and three parents. Next we click on the “Select Parent” button, highlighted in red. In this step, we can already see a preliminary version of the MTheory on the right panel.</p>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_05.png" alt=""><br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_05.png" alt=""><br/><br/>
       
       <p>To provide an example with a relationship of nodes inside the same MFrag, in the following image we choose another child-parent pair and click on the “Select Button” highlighted in red. We can again see the updated MTheory on the right panel.</p>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_06.png" alt=""><br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_06.png" alt=""><br/><br/>
       
       <p>Next, we define a relationship with input nodes from more than one MFrag and click on the “Select Parent” button highlighted in red.</p>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_07.png" alt=""><br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_07.png" alt=""><br/><br/>
       
       <p>Finally, on the image below we can see the structure of our final MTheory on the right panel. After selecting the parents, the user can move on to the next step by clicking on the button “Next[Add Contexts]”, highlighted in red.</p>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_08.png" alt=""><br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_08.png" alt=""><br/><br/>
       
       <p>The next step is “Set joining condition”, which is not implemented yet. So the tool performs joins using the default equal names on the tables. Thus, to move forward the user can click on the button “Next[Add CLDs]” highlighted in red on the image below.</p>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_09.png" alt=""><br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_09.png" alt=""><br/><br/>
       
       <p>The next step, “Class Local Distribution”, is not yet implemented, so the user is not able to add CLDs or select their types manually. Therefore, to proceed with learning the CLDs from the data on the RDB, the user has to click on the button “Next[MEBN Learning]” highlighted in red on the following image.</p>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_10.png" alt=""><br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_10.png" alt=""><br/><br/>
       
       <p>When HMLP finishes learning the CLDs, as we can see in the image below the tool opens a MEBN’s GUI containing the MTheory with the structure defined during the wizard and LPDs obtained from the data in the RDB. This allows the user to now effectively work with the MEBN inside UnBBayes, making use of all its features.</p>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_11.png" alt=""><br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_11.png" alt=""><br/><br/>
       
       <p>By clicking on each MFrag we see the structure created, illustrated on the three images below.</p>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_12.png" alt=""><br/>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_13.png" alt=""><br/>
-      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_14.png" alt=""><br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_12.png" alt=""><br/><br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_13.png" alt=""><br/><br/>
+      <img class="img-fluid rounded" src="http://UnBBayes.github.io/userguide/UserGuide_14.png" alt=""><br/><br/>
 
     
         
