@@ -53,8 +53,46 @@
       
       <hr/>
       <h2>Developer Guide</h2>
-      <p> TODO </p>
+
+      <h4>1. Installing the HML Core</h4>
+      <p>The HML Core requires three projects in the Git GMU_HMLP: ModelerLib, MEBN-RM, and MEBN_LN. ModelerLib is a JAVA project, which contains a set of libraries to support the projects MEBN-RM and MEBN_LN. The project MEBN-RM performs a mapping between MEBN and a relational model (RM) (e.g., a relational schema in a relational database). The project MEBN_LN contains MEBN learning algorithms. To install these projects, use the Git repository “https://github.com/pcyoung75/GMU_HMLP.git”. The project HML(P)_TOOL contains several illustrative examples and a GUI for HML.</p>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_01.png" alt=""><br/><br/>
       
+      <h4>2. Using the HML Core in Text Mode</h4>
+      <p>The project HML(P)_TOOL contains an example code, text_mode_continuous_heater_model.java. This code is used to learn a MEBN model from a MySQL database. In the code, we can find a method run(). The following introduces each step of the method.  </p>
+
+      <h5>2.1 Initialize RDB
+      <p>Basically, HML starts from a relational database. The current version of HML uses MySQL. To access the relational database, the address, ID, and password are required. The method RDB.This().init(database) prepares initial settings for MEBN learning.  </p>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_02.png" alt=""><br/><br/>
+        
+      <h5>2.2 Perform MEBN-RM
+      <p>After initializing the relational database, a MEBN-RM (Relational Model) mapping is performed. MEBN-RM converts the relational database to a partial MTheory. To see a result from the mapping, a method System.out.println(mTheory.toString("MFrag", "MNode")); can be used. </p>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_03.png" alt=""><br/><br/>
+        
+      <h5>2.3 Add parents 
+      <p>HML requires a setting for causal relationships between MNodes in the partial MTheory. An MNode can be a childMNode which is a leaf node influenced by parentMNodes. Such an MNode can be expressed by a simple format “MFrag_name.MNode_name”. For example, the MNode HAI_energy in an MFrag heateractuator_item can be represented as “heateractuator_item.HAI_energy”.</p>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_04.png" alt=""><br/><br/>
+        
+      <h5>2.4 Add contexts
+      <p>HML requires joining rules for the relational dataset and context information. If there is nothing to join datasets, this step can be skipped.   </p>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_05.png" alt=""><br/><br/>
+        
+      <h5>2.5 Add CLD type
+      <p>Each MNode can be associated with a particular type of class local distribution (CLD) (e.g., conditional linear Gaussian). A default CLD for a continuous random variable is conditional linear Gaussian. A default CLD for a discrete random variable is Dirichlet distribution.  </p>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_06.png" alt=""><br/><br/>
+        
+      <h5>2.6 Learn MEBN
+      <p>To learn an MTheory, an MRoot is created. The MRoot is a container which includes a set of MTheories for MEBN learning. Each different MTheory is learned from the relational database. </p>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_07.png" alt=""><br/><br/>
+        
+      <h4>3. Limitations for the relational dataset</h4>
+      <p>HML is associated with a relational database such as MySQL. The current version of HML has some limitations for the relational dataset. MEBN developers are required to preprocess the relational dataset to ensure that MEBN learning performs well.</p>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_08.png" alt=""><br/><br/>
+        
+      <h4>4. Large size of the relational dataset</h4>
+      <p>In some case, the relational dataset can be very large (e.g., 100,000 rows in a table). In this case, it may be needed to increase a heap memory size (e.g., -Xms1024m and -Xmx4096m). Also, increasing memory in an operating computer can help.</p>
+
+
         
     
     </div>
