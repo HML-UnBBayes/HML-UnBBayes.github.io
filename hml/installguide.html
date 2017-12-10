@@ -52,47 +52,71 @@
       <br/><p><a href="/hml/">Back to plugin page</a></p>
       
       <hr/>
-      <h2>Installation Guide</h2>
+      <h1>Installation Guide</h1>
       
-      <p>To use the HML-UnBBayes plugin, the user starts by opening UnBBayes. After that, we proceed by clicking on the HMLP tool button, highlighted in red in the image below. </p>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_01.png" alt=""><br/><br/>
+      <h2>UnBBayes-(Hybrid) MEBN installation Guide</h2>
+ 
+      <br/>
+      <h3>1) Eclipse version</h3>
+      <p>The version Oxygen of Eclipse</p>
 
-      <p>After clicking on the HMLP tool button, a wizard pops up, asking for database server credentials. The plugin expects a MySQL database server on localhost. Therefore, the user has to enter username and password for the MySQL server on the correspondent area on the wizard window, highlighted in red in the following image.</p>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_02.png" alt=""><br/><br/>
+      <br/>
+      <h3>2) MAVEN</h3>
+      <h4>2.1) Install M2E for maven</h4>
+      <p><a href="http://download.eclipse.org/technology/m2e/releases">http://download.eclipse.org/technology/m2e/releases</a></p>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/installguide/InstallGuide_01.png" alt=""><br/><br/>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/installguide/InstallGuide_02.png" alt=""><br/><br/>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/installguide/InstallGuide_03.png" alt=""><br/><br/>
       
-      <p>After successfully connecting to the MySQL server, the user has to select which database the tool should work on, by clicking in one of the database names listed under “Database” folder. After that, the user clicks on the “Select” button, highlighted in red on the image below.</p>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_03.png" alt=""><br/><br/>
-      
-      <p>After selecting the database, the tool has a step for editing the World Model. Nevertheless, this feature is not yet implemented. So to proceed the user should click on the “Next[Add Parents]” button, highlighted in red on the following image.</p>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_04.png" alt=""><br/><br/>
-      
-      <p>On the “Select Parents” step, to add relationships the user should select a child from the left list and parent(s) from the right list. On the following image we select one child and three parents. Next we click on the “Select Parent” button, highlighted in red. In this step, we can already see a preliminary version of the MTheory on the right panel.</p>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_05.png" alt=""><br/><br/>
-      
-      <p>To provide an example with a relationship of nodes inside the same MFrag, in the following image we choose another child-parent pair and click on the “Select Button” highlighted in red. We can again see the updated MTheory on the right panel.</p>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_06.png" alt=""><br/><br/>
-      
-      <p>Next, we define a relationship with input nodes from more than one MFrag and click on the “Select Parent” button highlighted in red.</p>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_07.png" alt=""><br/><br/>
-      
-      <p>Finally, on the image below we can see the structure of our final MTheory on the right panel. After selecting the parents, the user can move on to the next step by clicking on the button “Next[Add Contexts]”, highlighted in red.</p>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_08.png" alt=""><br/><br/>
-      
-      <p>The next step is “Set joining condition”, which is not implemented yet. So the tool performs joins using the default equal names on the tables. Thus, to move forward the user can click on the button “Next[Add CLDs]” highlighted in red on the image below.</p>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_09.png" alt=""><br/><br/>
-      
-      <p>The next step, “Class Local Distribution”, is not yet implemented, so the user is not able to add CLDs or select their types manually. Therefore, to proceed with learning the CLDs from the data on the RDB, the user has to click on the button “Next[MEBN Learning]” highlighted in red on the following image.</p>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_10.png" alt=""><br/><br/>
-      
-      <p>When HMLP finishes learning the CLDs, as we can see in the image below the tool opens a MEBN’s GUI containing the MTheory with the structure defined during the wizard and LPDs obtained from the data in the RDB. This allows the user to now effectively work with the MEBN inside UnBBayes, making use of all its features.</p>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_11.png" alt=""><br/><br/>
-      
-      <p>By clicking on each MFrag we see the structure created, illustrated on the three images below.</p>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_12.png" alt=""><br/><br/>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_13.png" alt=""><br/><br/>
-      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/userguide/UserGuide_14.png" alt=""><br/><br/>
+      <h4>2.2) Install Maven</h4>
+      <p><a href="https://maven.apache.org/download.cgi">https://maven.apache.org/download.cgi</a></p>
 
-    
+      <h4>2.3) Install SVN connector</h4>
+      <p><a href="http://community.polarion.com/projects/subversive/download/eclipse/6.0/update-site/">http://community.polarion.com/projects/subversive/download/eclipse/6.0/update-site/</a></p>
+      
+      <br/>
+      <h3>3) UnBBayes-MEBN</h3>
+      <h4>3.1) Get SVN link</h4>
+      <p><a href="https://svn.code.sf.net/p/unbbayes/code/trunk">https://svn.code.sf.net/p/unbbayes/code/trunk</a></p>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/installguide/InstallGuide_04.png" alt=""><br/><br/>
+
+      <h4>3.2) Get UnBBayes by browsing the trunk</h4>
+      <p>Select UnBBayes to install it</p>
+      <p><a href="https://svn.code.sf.net/p/unbbayes/code/trunk/unbbayes">https://svn.code.sf.net/p/unbbayes/code/trunk/unbbayes</a></p>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/installguide/InstallGuide_05.png" alt=""><br/><br/>
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/installguide/InstallGuide_06.png" alt=""><br/><br/>
+      
+      <h4>3.3) Get MEBN by browsing the trunk</h4>
+      <p>Select unbbayes-mebn to install it</p>
+      <p><a href="https://svn.code.sf.net/p/unbbayes/code/trunk/unbbayes.prs.mebn">https://svn.code.sf.net/p/unbbayes/code/trunk/unbbayes.prs.mebn</a></p>
+
+      <h4>3.4) For MEBN, install jars through MAVEN (Note that see the readme.txt in the MEBN project)</h4>
+      <p>Go to \mvn_lib\powerloom></p>
+      <p>mvn install:install-file -DgroupId=guess -DartifactId=powerloom -Dversion=1.0 -Dpackaging=jar -Dfile=powerloom.jar</p>
+      <p>mvn install:install-file -DgroupId=guess -DartifactId=stella -Dversion=1.0 -Dpackaging=jar -Dfile=stella.jar</p>
+      <br/>
+      <p>Go to \mvn_lib\protege></p>
+      <p>mvn install:install-file -DgroupId=guess -DartifactId=protege -Dversion=3.2 -Dpackaging=jar -Dfile=protege.jar</p>
+      <br/>
+      <p>Go to \mvn_lib\protege\edu.stanford.smi.protegex.owl></p>
+      <p>mvn install:install-file -DgroupId=guess -DartifactId=iri -Dversion=2.4 -Dpackaging=jar -Dfile=iri.jar</p>
+      <p>mvn install:install-file -DgroupId=guess -DartifactId=jena -Dversion=2.4 -Dpackaging=jar -Dfile=jena.jar</p>
+      <p>mvn install:install-file -DgroupId=guess -DartifactId=protege-owl -Dversion=3.2 -Dpackaging=jar -Dfile=protege-owl.jar</p>
+      <br/>
+      <p><b><If you do not have UnBBayes in your local mvn repository, then execute the below command></b></p>
+      <p>Go to \mvn_lib\unbbayes\jpf></p>
+      <p>mvn install:install-file -DgroupId=guess -DartifactId=jpf -Dversion=1.5 -Dpackaging=jar -Dfile=jpf-1.5.jar</p>
+      <br/>
+      <p>Go to \mvn_lib\unbbayes\unbbayes></p>
+      <p>mvn install:install-file -DpomFile=pom.xml -Dpackaging=jar -Dfile=unbbayes-4.1.0.jar</p>
+
+      <br/>
+      <h3>4) UnBBayes-Hybrid MEBN</h3>
+      <h4>4.1) Get CPS using the following link</h4>
+      <p><a href="https://svn.code.sf.net/p/prognos/code/trunk/cps">https://svn.code.sf.net/p/prognos/code/trunk/cps</a></p>
+        
+      <h4>4.2) Get continuous MEBN plug-in using the following link</h4>
+      <p><a href="https://svn.code.sf.net/p/prognos/code/trunk/edu.gmu.seor.prognos.unbbayesplugin.continuous>https://svn.code.sf.net/p/prognos/code/trunk/edu.gmu.seor.prognos.unbbayesplugin.continuous</a></p>
         
     
     </div>
