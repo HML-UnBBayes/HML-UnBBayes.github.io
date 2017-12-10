@@ -53,48 +53,89 @@
       
       <hr/>
       <h1>Developer Guide</h1>
-      <br/>
+      <p>
+        1) Introduction<br/>
+        2) Installing the HML Core<br/>
+        3) Using the HML Core in Text Mode<br/>  
+        4) Limitations for the relational dataset<br/>
+        5) Large size of the relational dataset<br/>
+        6) Structure of HML-UnBBayes Plugin<br/>
+      </p>
       
-      <h3>1) Installing the HML Core</h3>
+      <br/><hr/><br/>
+      <h3>1) Introduction</h3>
+      <p>To use HML-UnBBayes the following projects need to be installed:</p>
+      <ul>
+        <li>UnBBayes core (unbbayes - version 4.22.18)</li>
+        <li>UnBBayes-MEBN (unbbayes.prs.mebn - version 1.18.15)</li>
+        <li>CPS (prognos.unbbayesplugin.cps - version 1.0.1)</li>
+        <li>Continuous (prognos.unbbayesplugin.continuous - version 0.0.2)</li>
+        <li>HML-UnBBayes plugin containing HML core and adapter to UnBBayes (version 0.0.1)</li>
+      </ul>
+      <p>The step-by-step below will guide you through configuring these dependencies and, additionally, explain installation of Eclipse IDE, Maven and SVN.</p>
+      
+      <br/><hr/><br/>
+      <h3>2) Installing the HML Core</h3>
       <p>The HML Core requires three projects in the Git GMU_HMLP: ModelerLib, MEBN-RM, and MEBN_LN. ModelerLib is a JAVA project, which contains a set of libraries to support the projects MEBN-RM and MEBN_LN. The project MEBN-RM performs a mapping between MEBN and a relational model (RM) (e.g., a relational schema in a relational database). The project MEBN_LN contains MEBN learning algorithms. To install these projects, use the <a href="https://github.com/pcyoung75/GMU_HMLP.git">Git repository</a>. The project HML(P)_TOOL contains several illustrative examples and a GUI for HML.</p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_01.png" alt=""><br/><br/>
       
-      <br/>
-      <h3>2) Using the HML Core in Text Mode</h3>
+      <br/><hr/><br/>
+      <h3>3) Using the HML Core in Text Mode</h3>
       <p>The project HML(P)_TOOL contains an example code, text_mode_continuous_heater_model.java. This code is used to learn a MEBN model from a MySQL database. In the code, we can find a method run(). The following introduces each step of the method.  </p>
 
-      <h4>2.1) Initialize RDB</h4>
+      <br/>
+      <h4>3.1) Initialize RDB</h4>
       <p>Basically, HML starts from a relational database. The current version of HML uses MySQL. To access the relational database, the address, ID, and password are required. The method RDB.This().init(database) prepares initial settings for MEBN learning.  </p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_02.png" alt=""><br/><br/>
-        
-      <h4>2.2) Perform MEBN-RM</h4>
+       
+      <br/>
+      <h4>3.2) Perform MEBN-RM</h4>
       <p>After initializing the relational database, a MEBN-RM (Relational Model) mapping is performed. MEBN-RM converts the relational database to a partial MTheory. To see a result from the mapping, a method System.out.println(mTheory.toString("MFrag", "MNode")); can be used. </p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_03.png" alt=""><br/><br/>
-        
-      <h4>2.3) Add parents</h4>
+       
+      <br/>
+      <h4>3.3) Add parents</h4>
       <p>HML requires a setting for causal relationships between MNodes in the partial MTheory. An MNode can be a childMNode which is a leaf node influenced by parentMNodes. Such an MNode can be expressed by a simple format “MFrag_name.MNode_name”. For example, the MNode HAI_energy in an MFrag heateractuator_item can be represented as “heateractuator_item.HAI_energy”.</p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_04.png" alt=""><br/><br/>
         
-      <h4>2.4) Add contexts</h4>
+      <br/>
+      <h4>3.4) Add contexts</h4>
       <p>HML requires joining rules for the relational dataset and context information. If there is nothing to join datasets, this step can be skipped.   </p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_05.png" alt=""><br/><br/>
-        
-      <h4>2.5) Add CLD type</h4>
+       
+      <br/>
+      <h4>3.5) Add CLD type</h4>
       <p>Each MNode can be associated with a particular type of class local distribution (CLD) (e.g., conditional linear Gaussian). A default CLD for a continuous random variable is conditional linear Gaussian. A default CLD for a discrete random variable is Dirichlet distribution.  </p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_06.png" alt=""><br/><br/>
         
-      <h4>2.6) Learn MEBN</h4>
+      <br/>
+      <h4>3.6) Learn MEBN</h4>
       <p>To learn an MTheory, an MRoot is created. The MRoot is a container which includes a set of MTheories for MEBN learning. Each different MTheory is learned from the relational database. </p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_07.png" alt=""><br/><br/>
         
-      <br/>
-      <h3>3) Limitations for the relational dataset</h3>
+      <br/><hr/><br/>
+      <h3>4) Limitations for the relational dataset</h3>
       <p>HML is associated with a relational database such as MySQL. The current version of HML has some limitations for the relational dataset. MEBN developers are required to preprocess the relational dataset to ensure that MEBN learning performs well.</p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_08.png" alt=""><br/><br/>
        
-      <br/>
-      <h3>4) Large size of the relational dataset</h3>
+      <br/><hr/><br/>
+      <h3>5) Large size of the relational dataset</h3>
       <p>In some case, the relational dataset can be very large (e.g., 100,000 rows in a table). In this case, it may be needed to increase a heap memory size (e.g., -Xms1024m and -Xmx4096m). Also, increasing memory in an operating computer can help.</p>
+
+      <br/><hr/><br/>
+      <h3>6) Structure of HML-UnBBayes Plugin</h3>
+      <p>To encourage the reuse of the plugin and also the extension of its capabilities, this section gives an overview of the plugin structure.<br/>
+        The HML-UnBBayes plugin works as an adapter between HML core and UnBBayes. Since both these two applications use MEBN but with different programming structures, the plugin is responsible for translating the concepts from HLM to UnBBayes, to allow the reuse of MEBN.<br/>
+    The class used by HML to deal with the plugin wizard is HMLP_Console. That class is related to the main class used on the plugin, MEBNConverter, which is responsible of adapting MEBN from HML to UnBBayes.<br/>
+    On the image below, we can the see a Class Diagram with the two classes mentioned above and a couple of other classes related to HML (on the left) and UnBBayes (on the right). It is clear that MEBNConverter works as an adapter of MEBNs from these two applications.</p>
+
+      <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/MEBNConverterClassDiagram.png" alt=""><br/><br/>
+      
+      <p>Using HML-UnBBayes plugin through the tool’s wizard, when HML process reaches the end, HMLP_Console uses the method convertMEBNAndOpenMEBNeditor. This method calls the appropriate methods of MEBNConverter to adapt the MEBN created from HML and the one to be loaded on UnBBayes’ MEBN GUI.<br/>
+    To illustrate the conversion process, the image below has a Collaboration Diagram, that gives an overview of the methods used by the plugin.</p
+
+       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/MEBNConverterCollaborationDiagram.png" alt="">
+        
       <br/><br/><br/>
 
         
