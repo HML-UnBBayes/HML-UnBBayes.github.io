@@ -54,39 +54,49 @@
       <hr/>
       <h1>Installation Guide</h1>
  
+      <p>HML-UnBBayes plugin depends on the following UnBBayes' plugins:</p>
+      <ul>
+        <li>UnBBayes core (unbbayes - version 4.22.18)</li>
+        <li>UnBBayes-MEBN (unbbayes.prs.mebn - version 1.18.15)</li>
+        <li>CPS (prognos.unbbayesplugin.cps - version 1.0.1)</li>
+        <li>Continuous (prognos.unbbayesplugin.continuous - version 0.0.2)</li>
+        <li>Plugin containing HML core and adapter to UnBBayes (version 0.0.1)</li>
+      </ul>
+      <p>The step-by-step below will guide you through configuring these dependencies and, additionally, explain installation of Eclipse IDE, Maven and SVN.</p>
+      
       <br/>
-      <h3>1) Eclipse version</h3>
-      <p>The version Oxygen of Eclipse</p>
+      <h3>1) Eclipse IDE version</h3>
+      <p>The version Oxygen of Eclipse IDE.</p>
 
       <br/>
-      <h3>2) MAVEN</h3>
+      <h3>2) Maven</h3>
       <h4>2.1) Install M2E for maven</h4>
-      <p><a href="http://download.eclipse.org/technology/m2e/releases">http://download.eclipse.org/technology/m2e/releases</a></p>
+      <p><a target="_blank" href="http://download.eclipse.org/technology/m2e/releases">http://download.eclipse.org/technology/m2e/releases</a></p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/installguide/InstallGuide_01.png" alt=""><br/><br/>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/installguide/InstallGuide_02.png" alt="">
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/installguide/InstallGuide_03.png" alt=""><br/><br/>
       
       <h4>2.2) Install Maven</h4>
-      <p><a href="https://maven.apache.org/download.cgi">https://maven.apache.org/download.cgi</a></p>
+      <p><a target="_blank" href="https://maven.apache.org/download.cgi">https://maven.apache.org/download.cgi</a></p>
 
-      <h4>2.3) Install SVN connector</h4>
-      <p><a href="http://community.polarion.com/projects/subversive/download/eclipse/6.0/update-site/">http://community.polarion.com/projects/subversive/download/eclipse/6.0/update-site/</a></p>
+      <h4>2.3) Install SVN (Subversion) connector</h4>
+      <p><a target="_blank" href="http://community.polarion.com/projects/subversive/download/eclipse/6.0/update-site/">http://community.polarion.com/projects/subversive/download/eclipse/6.0/update-site/</a></p>
       
       <br/>
       <h3>3) UnBBayes-MEBN</h3>
-      <h4>3.1) Get SVN link</h4>
-      <p><a href="https://svn.code.sf.net/p/unbbayes/code/trunk">https://svn.code.sf.net/p/unbbayes/code/trunk</a></p>
+      <h4>3.1) Get SVN (Subversion) link for UnBBayes</h4>
+      <p><a target="_blank" href="https://svn.code.sf.net/p/unbbayes/code/trunk">https://svn.code.sf.net/p/unbbayes/code/trunk</a></p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/installguide/InstallGuide_04.png" alt=""><br/><br/>
 
       <h4>3.2) Get UnBBayes by browsing the trunk</h4>
       <p>Select UnBBayes to install it</p>
-      <p><a href="https://svn.code.sf.net/p/unbbayes/code/trunk/unbbayes">https://svn.code.sf.net/p/unbbayes/code/trunk/unbbayes</a></p>
+      <p><a target="_blank" href="https://svn.code.sf.net/p/unbbayes/code/trunk/unbbayes">https://svn.code.sf.net/p/unbbayes/code/trunk/unbbayes</a></p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/installguide/InstallGuide_05.png" alt="">
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/installguide/InstallGuide_06.png" alt=""><br/><br/>
       
       <h4>3.3) Get MEBN by browsing the trunk</h4>
       <p>Select UnBBayes-MEBN to install it</p>
-      <p><a href="https://svn.code.sf.net/p/unbbayes/code/trunk/unbbayes.prs.mebn">https://svn.code.sf.net/p/unbbayes/code/trunk/unbbayes.prs.mebn</a></p>
+      <p><a target="_blank" href="https://svn.code.sf.net/p/unbbayes/code/trunk/unbbayes.prs.mebn">https://svn.code.sf.net/p/unbbayes/code/trunk/unbbayes.prs.mebn</a></p>
 
       <h4>3.4) For MEBN, install jars through MAVEN (Note that see the readme.txt in the MEBN project)</h4>
       <p>Go to \mvn_lib\powerloom></p>
@@ -111,11 +121,18 @@
       <br/>
       <h3>4) UnBBayes-Hybrid MEBN</h3>
       <h4>4.1) Get CPS using the following link</h4>
-      <p><a href="https://svn.code.sf.net/p/prognos/code/trunk/cps">https://svn.code.sf.net/p/prognos/code/trunk/cps</a></p>
+      <p><a target="_blank" href="https://svn.code.sf.net/p/prognos/code/trunk/cps">https://svn.code.sf.net/p/prognos/code/trunk/cps</a></p>
         
       <h4>4.2) Get continuous MEBN plug-in using the following link</h4>
-      <p><a href="https://svn.code.sf.net/p/prognos/code/trunk/edu.gmu.seor.prognos.unbbayesplugin.continuous">https://svn.code.sf.net/p/prognos/code/trunk/edu.gmu.seor.prognos.unbbayesplugin.continuous</a></p>
+      <p><a target="_blank" href="https://svn.code.sf.net/p/prognos/code/trunk/edu.gmu.seor.prognos.unbbayesplugin.continuous">https://svn.code.sf.net/p/prognos/code/trunk/edu.gmu.seor.prognos.unbbayesplugin.continuous</a></p>
+      
+      <br/>
+      <h3>5) Installing the Plugin</h3>
+      <p>To use the plugin, the user needs to get the code from the <a target="_blank" href="https://github.com/HML-UnBBayes/hml">Git Repository</a>. Some jars may be needed, but all of them listed on lib folder of the plugin. Among these, HMLP_LN_RN_Mlib_v001.jar is the main jar, having the core implementation of the HMLP, which is constantly updated at <a href="https://github.com/pcyoung75/GMU_HMLP.git">GMU_HMLP repository</a> and can be exported to that jar to keep current version.</p>
+        
       <br/><br/><br/>
+      
+      
     
     </div>
     <!-- /.container -->
