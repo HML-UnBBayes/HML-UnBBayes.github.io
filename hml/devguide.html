@@ -64,15 +64,8 @@
       
       <br/><hr/><br/>
       <h3>1) Introduction</h3>
-      <p>To use HML-UnBBayes the following projects need to be installed:</p>
-      <ul>
-        <li>UnBBayes core (unbbayes - version 4.22.18)</li>
-        <li>UnBBayes-MEBN (unbbayes.prs.mebn - version 1.18.15)</li>
-        <li>CPS (prognos.unbbayesplugin.cps - version 1.0.1)</li>
-        <li>Continuous (prognos.unbbayesplugin.continuous - version 0.0.2)</li>
-        <li>HML-UnBBayes plugin containing HML core and adapter to UnBBayes (version 0.0.1)</li>
-      </ul>
-      <p>The step-by-step below will guide you through configuring these dependencies and, additionally, explain installation of Eclipse IDE, Maven and SVN.</p>
+      <p>This guide goes through supporting development of HML-UnBBayes looking separately at the HML Core and then at the HML-UnBBayes plugin itself. The first part focus on giving an overview of using the HML Core in Text Mode and also addressed limitations of the tool. </p>
+      <p>Finally, the step-by-step below will guide you through the structure of the HML-UnBBayes plugin, so that developers can understand the plugin and to encourage future work.</p>
       
       <br/><hr/><br/>
       <h3>2) Installing the HML Core</h3>
@@ -124,15 +117,15 @@
 
       <br/><hr/><br/>
       <h3>6) Structure of HML-UnBBayes Plugin</h3>
-      <p>To encourage the reuse of the plugin and also the extension of its capabilities, this section gives an overview of the plugin structure.<br/>
-        The HML-UnBBayes plugin works as an adapter between HML core and UnBBayes. Since both these two applications use MEBN but with different programming structures, the plugin is responsible for translating the concepts from HLM to UnBBayes, to allow the reuse of MEBN.<br/>
-    The class used by HML to deal with the plugin wizard is HMLP_Console. That class is related to the main class used on the plugin, MEBNConverter, which is responsible of adapting MEBN from HML to UnBBayes.<br/>
-    On the image below, we can the see a Class Diagram with the two classes mentioned above and a couple of other classes related to HML (on the left) and UnBBayes (on the right). It is clear that MEBNConverter works as an adapter of MEBNs from these two applications.</p>
+      <p>To encourage the reuse of the plugin and also the extension of its capabilities, this section gives an overview of the plugin structure.</p>
+      <p>The HML-UnBBayes plugin works as an adapter between HML core and UnBBayes. Since both these two applications use MEBN but with different programming structures, the plugin is responsible for translating the concepts from HLM to UnBBayes, to allow the reuse of MEBN.</p>
+      <p>The class used by HML to deal with the plugin wizard is HMLP_Console. That class is related to the main class used on the plugin, MEBNConverter, which is responsible of adapting MEBN from HML to UnBBayes.</p>
+      <p>On the image below, we can the see a Class Diagram with the two classes mentioned above and a couple of other classes related to HML (on the left) and UnBBayes (on the right). It is clear that MEBNConverter works as an adapter of MEBNs from these two applications.</p><br/>
 
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/MEBNConverterClassDiagram.png" alt=""><br/><br/>
       
-      <p>Using HML-UnBBayes plugin through the tool’s wizard, when HML process reaches the end, HMLP_Console uses the method convertMEBNAndOpenMEBNeditor. This method calls the appropriate methods of MEBNConverter to adapt the MEBN created from HML and the one to be loaded on UnBBayes’ MEBN GUI.<br/>
-    To illustrate the conversion process, the image below has a Collaboration Diagram, that gives an overview of the methods used by the plugin.</p
+      <p>Using HML-UnBBayes plugin through the tool’s wizard, when HML process reaches the end, HMLP_Console uses the method convertMEBNAndOpenMEBNeditor. This method calls the appropriate methods of MEBNConverter to adapt the MEBN created from HML and the one to be loaded on UnBBayes’ MEBN GUI.</p>
+    <p>To illustrate the conversion process, the image below has a Collaboration Diagram, that gives an overview of the methods used by the plugin.</p
 
        <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/MEBNConverterCollaborationDiagram.png" alt="">
         
