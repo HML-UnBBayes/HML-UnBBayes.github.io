@@ -52,13 +52,14 @@
       <p><a href="/hml/">Back to plugin page</a></p><br/>
       
       <hr/>
-      <h2>Developer Guide</h2>
+      <h1>Developer Guide</h1>
       <br/>
       
       <h3>1. Installing the HML Core</h3>
-      <p>The HML Core requires three projects in the Git GMU_HMLP: ModelerLib, MEBN-RM, and MEBN_LN. ModelerLib is a JAVA project, which contains a set of libraries to support the projects MEBN-RM and MEBN_LN. The project MEBN-RM performs a mapping between MEBN and a relational model (RM) (e.g., a relational schema in a relational database). The project MEBN_LN contains MEBN learning algorithms. To install these projects, use the Git repository “https://github.com/pcyoung75/GMU_HMLP.git”. The project HML(P)_TOOL contains several illustrative examples and a GUI for HML.</p>
+      <p>The HML Core requires three projects in the Git GMU_HMLP: ModelerLib, MEBN-RM, and MEBN_LN. ModelerLib is a JAVA project, which contains a set of libraries to support the projects MEBN-RM and MEBN_LN. The project MEBN-RM performs a mapping between MEBN and a relational model (RM) (e.g., a relational schema in a relational database). The project MEBN_LN contains MEBN learning algorithms. To install these projects, use the <a href="https://github.com/pcyoung75/GMU_HMLP.git">Git repository</a>. The project HML(P)_TOOL contains several illustrative examples and a GUI for HML.</p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_01.png" alt=""><br/><br/>
       
+      <br/>
       <h3>2. Using the HML Core in Text Mode</h3>
       <p>The project HML(P)_TOOL contains an example code, text_mode_continuous_heater_model.java. This code is used to learn a MEBN model from a MySQL database. In the code, we can find a method run(). The following introduces each step of the method.  </p>
 
@@ -86,10 +87,12 @@
       <p>To learn an MTheory, an MRoot is created. The MRoot is a container which includes a set of MTheories for MEBN learning. Each different MTheory is learned from the relational database. </p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_07.png" alt=""><br/><br/>
         
+      <br/>
       <h3>3. Limitations for the relational dataset</h3>
       <p>HML is associated with a relational database such as MySQL. The current version of HML has some limitations for the relational dataset. MEBN developers are required to preprocess the relational dataset to ensure that MEBN learning performs well.</p>
       <img class="img-fluid rounded" src="http://HML-UnBBayes.github.io/devguide/DevGuide_08.png" alt=""><br/><br/>
-        
+       
+      <br/>
       <h3>4. Large size of the relational dataset</h3>
       <p>In some case, the relational dataset can be very large (e.g., 100,000 rows in a table). In this case, it may be needed to increase a heap memory size (e.g., -Xms1024m and -Xmx4096m). Also, increasing memory in an operating computer can help.</p>
 
