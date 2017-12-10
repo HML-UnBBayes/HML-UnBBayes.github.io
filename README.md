@@ -1,3 +1,3 @@
-# UnBBayes
+# HML-UnBBayes
 
-Repository for webpage at [UnBBayes@Github](https://unbbayes.github.io/).
+Repository for webpage at [HML-UnBBayes@Github](https://hml-unbbayes.github.io/).
